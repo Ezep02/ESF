@@ -1,7 +1,7 @@
 import Spotify from "../content-view/medias/Spotify"
 import Instagram from "../content-view/medias/Instagram"
 
-function Profile({chanelAvatar, chanelName,chanelPersonalizedUrl}) {
+function Profile({chanelAvatar, chanelName}) {
 
   return (
     <article className="flex flex-col items-center justify-center p-4 bg-zinc-950 mb-8 rounded-2xl">

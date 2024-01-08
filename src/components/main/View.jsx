@@ -2,15 +2,16 @@ import ContentView from "./content-view/ContentView"
 import LastReleases from "./last-releases/LastReleases"
 import Profile from "./profile/Profile"
 import CommentSliderSection from "./coments-slider/CommentSliderSection.jsx";
-import { API_KEY, CHANEL_ID } from "../../Utils.js";
+
+
 
 
 //it get datas profile stats as avatar, chanelName and personalized url
-const getProfileDataRequest = await fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=statistics&part=snippet&id=${CHANEL_ID}&maxResults=1&key=${API_KEY}`);
+const getProfileDataRequest = await fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=statistics&part=snippet&id=${import.meta.env.VITE_CHANEL_ID}&maxResults=1&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`);
 const profileData = await getProfileDataRequest.json()
 
 //request to get the last chanels releases and their videos IDS
-const lastReleasesRequest = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANEL_ID}&maxResults=3&order=date&type=video&key=${API_KEY}`)
+const lastReleasesRequest = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${import.meta.env.VITE_CHANEL_ID}&maxResults=3&order=date&type=video&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
 const getLastReleases = await lastReleasesRequest.json();
 
 

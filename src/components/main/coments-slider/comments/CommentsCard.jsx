@@ -1,5 +1,3 @@
-import { API_KEY, CHANEL_ID } from "../../../../Utils.js";
-
 import { useState, useEffect } from "react";
 
 function CommentsCard({
@@ -18,17 +16,17 @@ function CommentsCard({
     const searchComments = async (video1, video2, video3) => {
       try {
         const responseVideo1 = await fetch(
-          `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&order=relevance&textFormat=plainText&videoId=${video1}&key=${API_KEY}`
+          `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&order=relevance&textFormat=plainText&videoId=${video1}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
         );
         
 
         
         const responseVideo2 = await fetch(
-          `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${video2}&key=${API_KEY}`
+          `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${video2}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
         );
 
         const responseVideo3 = await fetch(
-          `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${video3}&key=${API_KEY}`
+          `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${video3}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
         );
 
         if (!responseVideo1.ok) {
@@ -121,7 +119,7 @@ function CommentsCard({
                             <h3 className="font-bold">{item.snippet.topLevelComment.snippet.authorDisplayName}</h3>   
                             {item.snippet.topLevelComment.snippet.textOriginal}
                         </span> 
-                    <h4 className="opacity-50 text-xs">{video1Title}</h4>
+                    <h4 className="opacity-50 text-xs">{video2Title}</h4>
                 </li>
                          
             ))
@@ -148,7 +146,7 @@ function CommentsCard({
                             <h3 className="font-bold text-pretty">{item.snippet.topLevelComment.snippet.authorDisplayName}</h3>   
                             {item.snippet.topLevelComment.snippet.textOriginal}
                         </span> 
-                    <h4 className="opacity-50 text-xs">{video1Title}</h4>
+                    <h4 className="opacity-50 text-xs">{video3Title}</h4>
                 </li>
                          
             ))
