@@ -5,7 +5,7 @@ import MainView from "./components/main/View"
 function App() {
   
   return (
-    <div className="">
+    <div>
       
       <MainView/>
       
