@@ -2,7 +2,7 @@ function YoutubeStats({videoCount, chanelViews, subs}) {
   return (
     <div className="bg-zinc-950 rounded-2xl w-full flex flex-col p-10
     h-full
-    col-start-1 row-start-3 row-span-1
+    col-start-1 col-end-13 row-start-3 row-span-1
     xl:col-start-1 xl:lg:col-end-13 xl:row-start-3 xl:row-end-4 
     xl:flex-row xl:justify-evenly xl:items-center
 

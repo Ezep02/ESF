@@ -35,7 +35,7 @@ function View() {
   const { profileData, getLastReleases } = data;
 
   return (
-    <div className="w-full h-full min-w-[450px] bg-[url('/giphy.gif')] bg-no-repeat bg-cover  rounded-xl p-4">
+    <div className="w-full h-full min-w-[350px] bg-[url('/giphy.gif')] bg-no-repeat bg-cover  rounded-xl p-4">
       {/* Perfil */}
       <Profile
         chanelAvatar={profileData.items[0].snippet.thumbnails.medium.url}

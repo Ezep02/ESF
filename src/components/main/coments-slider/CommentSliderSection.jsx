@@ -6,7 +6,7 @@ function CommentSliderSection({video1ID, video1Title, video2ID, video2Title, vid
 
   return (
 
-    <div className="w-full h-screen grid grid-rows-12 pt-10">
+    <div className="w-full h-screen grid grid-rows-12 mt-4 grid-cols-12">
 
         <CommentPhoto/>
 

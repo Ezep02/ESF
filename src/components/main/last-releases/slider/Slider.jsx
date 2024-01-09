@@ -35,6 +35,7 @@ function Slider() {
     <div className='
       rounded-2xl
       h-full
+      
       cursor-pointer
       overflow-hidden
       '>
@@ -51,7 +52,7 @@ function Slider() {
         }}
         navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
-        className="w-full h-full"
+        className="w-full h-full "
       >
         <SwiperSlide className="flex justify-center items-center h-full w-full">
 
@@ -60,14 +61,11 @@ function Slider() {
         </SwiperSlide>
 
         <SwiperSlide className="flex justify-center items-center h-full w-full">
-          <video src="/vid-2.mp4"className='object-cover h-full w-full rounded-2xl' autoPlay loop muted></video>
+          <video src="/vid-3.mp4" className='object-cover h-full w-full rounded-2xl' autoPlay loop muted></video>
         </SwiperSlide>
 
         <SwiperSlide className="flex justify-center items-center h-full w-full">
           <video src="/vid-5.mp4" className='object-cover h-full w-full rounded-2xl' autoPlay loop muted></video>
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center h-full w-full">
-          <video src="/vid-4.mp4" className='object-cover h-full w-full rounded-2xl' autoPlay loop muted></video>
         </SwiperSlide>
       </Swiper>
       

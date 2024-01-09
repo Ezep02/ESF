@@ -8,9 +8,8 @@ function CommentsCard({
   video3ID,
   video3Title,
 }) {
-  const [video1, setVideo1] = useState(null);
-  const [video2, setVideo2] = useState(null);
-  const [video3, setVideo3] = useState(null);
+  const [videos, setVideo] = useState(null);
+  
 
   useEffect(() => {
     const searchComments = async (video1, video2, video3) => {
@@ -18,8 +17,6 @@ function CommentsCard({
         const responseVideo1 = await fetch(
           `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&order=relevance&textFormat=plainText&videoId=${video1}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
         );
-        
-
         
         const responseVideo2 = await fetch(
           `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${video2}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
@@ -35,13 +32,10 @@ function CommentsCard({
 
         //set video 1 response
         const resultVideo1 = await responseVideo1.json();
-        setVideo1(resultVideo1);
-
         const resultVideo2 = await responseVideo2.json();
-        setVideo2(resultVideo2);
-
         const resultVideo3 = await responseVideo3.json();
-        setVideo3(resultVideo3);
+
+        setVideo({resultVideo1, resultVideo2, resultVideo3});
         
       } catch (e) {
         console.error("error", e.message);
@@ -50,6 +44,14 @@ function CommentsCard({
 
     searchComments(video1ID, video2ID, video3ID);
   }, []);
+
+  if (!videos) {
+    // Mientras se cargan los datos, puedes renderizar un componente de carga o un mensaje.
+    return <div>Cargando...</div>;
+  }
+
+  const {resultVideo1, resultVideo2, resultVideo3} = videos
+  
 
   return (
     <article className=" 
@@ -75,8 +77,8 @@ function CommentsCard({
       ">
         
         <ul className="flex flex-col gap-2">
-          {video1 ? (
-            video1.items.map((item) => (   
+          {resultVideo1 ? (
+            resultVideo1.items.map((item) => (   
                 item.snippet.topLevelComment.snippet.authorDisplayName == "@eros.s.f" ? 
                 (
                     <li key={item.id} className="bg-red-900 p-2 rounded-md">
@@ -102,8 +104,8 @@ function CommentsCard({
         </ul>
 
         <ul className="flex flex-col gap-2">
-          {video2 ? (
-            video2.items.map((item) => (
+          {resultVideo2 ? (
+            resultVideo2.items.map((item) => (
               item.snippet.topLevelComment.snippet.authorDisplayName == "@eros.s.f" ? 
                 (
                     <li key={item.id} className="bg-red-900 p-2 rounded-md">
@@ -129,8 +131,8 @@ function CommentsCard({
         </ul>
 
         <ul className="flex flex-col gap-2">
-          {video3 ? (
-            video3.items.map((item) => (
+          {resultVideo3 ? (
+            resultVideo3.items.map((item) => (
               item.snippet.topLevelComment.snippet.authorDisplayName == "@eros.s.f" ? 
                 (
                     <li key={item.id} className="bg-red-900 p-2 rounded-md">

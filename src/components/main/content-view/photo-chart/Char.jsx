@@ -3,7 +3,8 @@
 function Char() {
   return (
     <article className="bg-zinc-950 rounded-2xl flex items-center p-4 
-      row-start-2
+      row-start-2 col-start-1 col-end-13
+
       xl:col-start-9 xl:lg:col-end-13 xl:row-start-1 xl:row-end-3
       lg:col-start-1 lg:col-end-13 lg:row-start-3 lg:row-end-4
       md:col-start-1 md:col-end-13 md:row-start-3 md:row-end-4
