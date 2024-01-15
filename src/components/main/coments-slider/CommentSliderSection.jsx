@@ -1,4 +1,3 @@
-import CommentPhoto from "./CommentPhoto"
 import CommentsCard from "./comments/CommentsCard"
 
 
@@ -6,11 +5,8 @@ function CommentSliderSection({video1ID, video1Title, video2ID, video2Title, vid
 
   return (
 
-    <div className="w-full h-screen grid grid-rows-12 mt-4 grid-cols-12">
+    <div className="w-full h-screen grid grid-rows-12 grid-cols-12 gap-2">
 
-        <CommentPhoto/>
-
-        
         <CommentsCard
             video1ID={video1ID}
             video1Title={video1Title}

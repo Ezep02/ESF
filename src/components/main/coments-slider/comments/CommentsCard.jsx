@@ -56,11 +56,11 @@ function CommentsCard({
   return (
     <article className=" 
         rounded-2xl bg-zinc-950 pb-10
-        col-start-1 col-end-13 row-start-5 row-end-13
-        xl:col-start-1 xl:col-end-13 xl:row-start-5 xl:row-end-13
-        lg:col-start-1 lg:col-end-13 lg:row-start-5 lg:row-end-13
-        md:col-start-1 md:col-end-13 md:row-start-5 md:row-end-13
-        sm:col-start-1 sm:col-end-13 sm:row-start-5 sm:row-end-13
+        col-start-1 col-end-13 row-start-1 row-end-13
+        xl:col-start-1 xl:col-end-13 xl:row-start-1 xl:row-end-13
+        lg:col-start-1 lg:col-end-13 lg:row-start-1 lg:row-end-13
+        md:col-start-1 md:col-end-13 md:row-start-1 md:row-end-13
+        sm:col-start-1 sm:col-end-13 sm:row-start-1 sm:row-end-13
         flex flex-col items-center 
     ">
       <div className="w-full flex justify-center p-10

@@ -5,35 +5,37 @@ import Profile from "./profile/Profile";
 import CommentSliderSection from "./coments-slider/CommentSliderSection.jsx";
 
 function View() {
+
   const [data, setData] = useState(null);
+  const fetchData = async () => {
+    try {
+      // Obtiene datos de estadísticas del perfil, como avatar y nombre del canal.
+      const getProfileDataRequest = await fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=statistics&part=snippet&id=${import.meta.env.VITE_CHANEL_ID}&maxResults=1&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`);
+      
+      const profileData = await getProfileDataRequest.json();
+      
+      // Realiza una solicitud para obtener los últimos lanzamientos del canal y IDs de video.
+      const lastReleasesRequest = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${import.meta.env.VITE_CHANEL_ID}&maxResults=3&order=date&type=video&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`);
+      const getLastReleases = await lastReleasesRequest.json();
+      
+      setData({ profileData, getLastReleases });
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Obtiene datos de estadísticas del perfil, como avatar, nombre del canal y URL personalizada.
-        const getProfileDataRequest = await fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=statistics&part=snippet&id=${import.meta.env.VITE_CHANEL_ID}&maxResults=1&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`);
-        const profileData = await getProfileDataRequest.json();
-
-        // Realiza una solicitud para obtener los últimos lanzamientos del canal y sus IDs de video.
-        const lastReleasesRequest = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${import.meta.env.VITE_CHANEL_ID}&maxResults=3&order=date&type=video&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`);
-        const getLastReleases = await lastReleasesRequest.json();
-
-        setData({ profileData, getLastReleases });
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
     fetchData();
-  }, []); // El array vacío asegura que useEffect se ejecute solo una vez al montar el componente.
+  }, [data]); 
 
   if (!data) {
-    // Mientras se cargan los datos, puedes renderizar un componente de carga o un mensaje.
-    return <div>Cargando...</div>;
+    // Mientras se cargan los datos,se renderiza un o un mensaje.
+    return <div>Cargando pagina...</div>;
   }
 
   const { profileData, getLastReleases } = data;
-
+ 
   return (
     <div className="w-full h-full min-w-[350px] bg-[url('/giphy.gif')] bg-no-repeat bg-cover  rounded-xl p-4">
       {/* Perfil */}
@@ -52,6 +54,12 @@ function View() {
 
       {/* Últimos lanzamientos */}
       <LastReleases lastReleases={getLastReleases} />
+
+      {/* Spotify card */}
+      
+      <section className="pb-5 ">
+        <iframe  src="https://open.spotify.com/embed/artist/298VDTAoYDKCx28QsVWgi1?utm_source=generator" width="100%" height="482" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" className=" rounded-2xl "></iframe>
+      </section>
 
       {/* Slider y comentarios de YouTube */}
       <CommentSliderSection

@@ -44,7 +44,7 @@ function Slider() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2600,
+          delay: 2400,
           disableOnInteraction: false,
         }}
         pagination={{

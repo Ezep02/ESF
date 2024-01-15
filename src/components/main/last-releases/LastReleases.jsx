@@ -3,7 +3,7 @@ import Slider from "./slider/Slider";
 function LastReleases({ lastReleases }) {
 
   return (
-    <article className="w-full h-screen gap-2 grid grid-cols-12 grid-rows-10 mt-5">
+    <article className="w-full h-screen gap-2 grid grid-cols-12 grid-rows-10 py-5">
       <div
         className="
                 
@@ -17,7 +17,7 @@ function LastReleases({ lastReleases }) {
           <h2 className="uppercase font-bold 
 
             xl:text-2xl lg:text-2xl md:text-xl  ms:text-xl 
-            text-red-600
+            text-white
           ">Ultimos Lanzamientos</h2>
         </div>
 
@@ -40,7 +40,15 @@ function LastReleases({ lastReleases }) {
           </div>
         ))}
 
-        <div className="bg-zinc-950 flex justify-center items-center rounded-xl w-full h-full p-5">
+       
+      </div>
+      <div className="bg-zinc-950 flex justify-center items-center rounded-xl w-full h-full
+        row-start-9 row-end-13 col-start-1 col-end-13
+        xl:col-start-1 xl:col-end-8 xl:row-start-8 xl:row-end-13
+        lg:col-start-1 lg:col-end-8 lg:row-start-9 lg:row-end-13
+        md:col-start-1 md:col-end-8 md:row-start-9 md:row-end-13
+        sm:col-start-1 sm:col-end-13 sm:row-start-9 sm:row-end-13
+      ">
           <span className="items-center text-2xl font-bold">
             Escuchar en
             <a
@@ -53,15 +61,14 @@ function LastReleases({ lastReleases }) {
             </a>
           </span>
         </div>
-      </div>
 
       <div
         className="
                 hidden 
                 w-full h-full   
-                xl:col-start-8 xl:col-end-13 xl:row-start-1 xl:row-end-11 xl:block
-                lg:col-start-8 lg:col-end-13 lg:row-start-1 lg:row-end-11 lg:block
-                md:col-start-8 md:col-end-13 md:row-start-1 md:row-end-11 md:block
+                xl:col-start-8 xl:col-end-13 xl:row-start-1 xl:row-end-13 xl:block
+                lg:col-start-8 lg:col-end-13 lg:row-start-1 lg:row-end-13 lg:block
+                md:col-start-8 md:col-end-13 md:row-start-1 md:row-end-13 md:block
                 
             "
       >
