@@ -2,7 +2,7 @@ import {FaInstagram, FaSpotify} from "react-icons/fa"
 
 function Spotify() {
   return (
-    <div className='bg-black  rounded-xl flex items-center justify-center p-5 hover:scale-105'>
+    <div className='bg-black  rounded-xl flex items-center justify-center p-5 hover:scale-105 shadow-2xl'>
         <a 
             href="https://open.spotify.com/intl-es/artist/298VDTAoYDKCx28QsVWgi1" 
             target='_blank' 

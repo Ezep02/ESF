@@ -55,7 +55,7 @@ function CommentsCard({
 
   return (
     <article className=" 
-        rounded-2xl bg-zinc-950 pb-10
+        rounded-2xl bg-zinc-950 
         col-start-1 col-end-13 row-start-1 row-end-13
         xl:col-start-1 xl:col-end-13 xl:row-start-1 xl:row-end-13
         lg:col-start-1 lg:col-end-13 lg:row-start-1 lg:row-end-13
@@ -81,7 +81,7 @@ function CommentsCard({
             resultVideo1.items.map((item) => (   
                 item.snippet.topLevelComment.snippet.authorDisplayName == "@eros.s.f" ? 
                 (
-                    <li key={item.id} className="bg-red-900 p-2 rounded-md">
+                    <li key={item.id} className="bg-red-900 p-2 rounded-md shadow-2xl ">
                         <span className="text-white">
                             <h3 className="font-bold text-pretty">{item.snippet.topLevelComment.snippet.authorDisplayName}</h3>   
                             {item.snippet.topLevelComment.snippet.textOriginal}
@@ -89,7 +89,7 @@ function CommentsCard({
                         
                     </li>
                 ) : 
-                <li key={item.id} className="bg-zinc-900 p-2 rounded-md">
+                <li key={item.id} className="bg-zinc-900 p-2 rounded-md shadow-2xl">
                         <span className="text-white">
                             <h3 className="font-bold text-pretty">{item.snippet.topLevelComment.snippet.authorDisplayName}</h3>   
                             {item.snippet.topLevelComment.snippet.textOriginal}
@@ -108,7 +108,7 @@ function CommentsCard({
             resultVideo2.items.map((item) => (
               item.snippet.topLevelComment.snippet.authorDisplayName == "@eros.s.f" ? 
                 (
-                    <li key={item.id} className="bg-red-900 p-2 rounded-md">
+                    <li key={item.id} className="bg-red-900 p-2 rounded-md shadow-2xl">
                         <span className="text-white">
                             <h3 className="font-bold">{item.snippet.topLevelComment.snippet.authorDisplayName}</h3>   
                             {item.snippet.topLevelComment.snippet.textOriginal}
@@ -116,7 +116,7 @@ function CommentsCard({
                         
                     </li>
                 ) : 
-                <li key={item.id} className="bg-zinc-900 p-2 rounded-md">
+                <li key={item.id} className="bg-zinc-900 p-2 rounded-md shadow-2xl">
                         <span className="text-white">
                             <h3 className="font-bold">{item.snippet.topLevelComment.snippet.authorDisplayName}</h3>   
                             {item.snippet.topLevelComment.snippet.textOriginal}
@@ -135,7 +135,7 @@ function CommentsCard({
             resultVideo3.items.map((item) => (
               item.snippet.topLevelComment.snippet.authorDisplayName == "@eros.s.f" ? 
                 (
-                    <li key={item.id} className="bg-red-900 p-2 rounded-md">
+                    <li key={item.id} className="bg-red-900 p-2 rounded-md shadow-2xl">
                         <span className="text-white">
                             <h3 className="font-bold">{item.snippet.topLevelComment.snippet.authorDisplayName}</h3>   
                             {item.snippet.topLevelComment.snippet.textOriginal}
@@ -143,7 +143,7 @@ function CommentsCard({
                         
                     </li>
                 ) : 
-                <li key={item.id} className="bg-zinc-900 p-2 rounded-md">
+                <li key={item.id} className="bg-zinc-900 p-2 rounded-md shadow-2xl">
                         <span className="text-white">
                             <h3 className="font-bold text-pretty">{item.snippet.topLevelComment.snippet.authorDisplayName}</h3>   
                             {item.snippet.topLevelComment.snippet.textOriginal}

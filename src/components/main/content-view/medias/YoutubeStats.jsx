@@ -1,7 +1,7 @@
 function YoutubeStats({videoCount, chanelViews, subs}) {
   return (
-    <div className="bg-zinc-950 rounded-2xl w-full flex flex-col p-10
-    h-full
+    <div className="bg-zinc-950 rounded-2xl w-full flex flex-col p-7
+    h-full shadow-2xl
     col-start-1 col-end-13 row-start-3 row-span-1
     xl:col-start-1 xl:lg:col-end-13 xl:row-start-3 xl:row-end-4 
     xl:flex-row xl:justify-evenly xl:items-center
@@ -16,7 +16,7 @@ function YoutubeStats({videoCount, chanelViews, subs}) {
     sm:flex-row 
 
     ">
-      <div className="flex items-center w-full justify-center p-4">
+      <div className="flex items-center w-full justify-center hover:scale-95">
         <a href="https://www.youtube.com/@eros.s.f/videos" target="_blank" className="text-5xl font-bold text-red-600
          hover:text-white">
           Youtube
@@ -30,18 +30,18 @@ function YoutubeStats({videoCount, chanelViews, subs}) {
         ">
 
         <div className="flex flex-col items-center p-4  ">
-          <span className="text-red-600 lg:text-5xl md:text-4xl sm:text-4xl text-4xl font-bold ">{subs}</span>
+          <span className="text-red-600 lg:text-5xl md:text-4xl sm:text-4xl text-4xl font-bold hover:scale-95">{subs}</span>
           <h4 className="text-xs font-bold text-zinc-100">SUSCRIPTORES</h4>
         </div>
       
         <div className="flex flex-col items-center p-4  ">
-          <span className="text-red-600 lg:text-5xl md:text-4xl sm:text-4xl text-4xl font-bold ">{videoCount}</span>
+          <span className="text-red-600 lg:text-5xl md:text-4xl sm:text-4xl text-4xl font-bold hover:scale-95">{videoCount}</span>
           <h4 className="text-xs font-bold text-zinc-100">VIDEOS</h4>
         
         </div>
         
         <div className="flex flex-col items-center p-4 ">
-          <span className="text-red-600 lg:text-5xl md:text-4xl sm:text-4xl text-4xl font-bold ">{chanelViews}</span>
+          <span className="text-red-600 lg:text-5xl md:text-4xl sm:text-4xl text-4xl font-bold hover:scale-95">{chanelViews}</span>
           <h4 className="text-xs font-bold text-zinc-100">VISTAS</h4>
         </div>
       

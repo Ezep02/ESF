@@ -45,7 +45,7 @@ function Slider() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2400,
+          delay: 2800,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -56,33 +56,19 @@ function Slider() {
         className="w-full h-full "
       >
         <SwiperSlide className="flex justify-center items-center h-full w-full">
-          <video
-            src="/vid-1.mp4"
-            className="object-cover h-full w-full rounded-2xl"
-            autoPlay
-            loop
-            muted
-          ></video>
+         
+          <img src="/fot-3.jpg" alt="foto-1" className="object-cover h-full w-full rounded-2xl" />
         </SwiperSlide>
 
         <SwiperSlide className="flex justify-center items-center h-full w-full">
-          <video
-            src="/vid-3.mp4"
-            className="object-cover h-full w-full rounded-2xl"
-            autoPlay
-            loop
-            muted
-          ></video>
+          <img src="/fot-1.jpg" alt="foto-1" className="object-cover h-full w-full rounded-2xl" />
+          
         </SwiperSlide>
-
+        
+            
         <SwiperSlide className="flex justify-center items-center h-full w-full">
-          <video
-            src="/vid-5.mp4"
-            className="object-cover h-full w-full rounded-2xl"
-            autoPlay
-            loop
-            muted
-          ></video>
+          <img src="/fot-2.jpg" alt="" className="object-cover h-full w-full rounded-2xl"/>
+          
         </SwiperSlide>
       </Swiper>
     </div>

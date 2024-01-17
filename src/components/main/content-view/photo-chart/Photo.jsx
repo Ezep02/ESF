@@ -3,7 +3,7 @@
 function PhotoChart() {
   return (
     <article 
-      className="bg-[url('/33.jpg')] bg-cover bg-no-repeat rounded-2xl 
+      className="bg-[url('/33.jpg')] bg-cover bg-no-repeat rounded-2xl  shadow-xl
 
       
       row-start-1 col-start-1 col-end-13

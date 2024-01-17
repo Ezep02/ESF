@@ -9,7 +9,7 @@ function CommentSliderSection({
   video3Title,
 }) {
   return (
-    <div className="w-full h-screen grid grid-rows-12 grid-cols-12 gap-2">
+    <div className="w-full h-screen grid grid-rows-12 grid-cols-12 gap-2 shadow-2xl">
       <CommentsCard
         video1ID={video1ID}
         video1Title={video1Title}

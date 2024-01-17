@@ -66,7 +66,7 @@ function View() {
 
       {/* Spotify card */}
 
-      <section className="pb-5">
+      <section className="pb-5 shadow-2xl ">
         <iframe
           src="https://open.spotify.com/embed/artist/298VDTAoYDKCx28QsVWgi1?utm_source=generator"
           width="100%"
